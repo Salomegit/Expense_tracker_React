@@ -1,4 +1,5 @@
 import React from 'react';
+import ExpenseItem from './components/Expenseitem';
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <h2>Let's get started!</h2>
 
       <p>This is also visible !</p>
+      < ExpenseItem />
     </div>
   );
 }
