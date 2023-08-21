@@ -5,7 +5,9 @@ import Card from "./Card";
 function ExpenseItem({date,title,amount})
 {
 
-
+const clickhandler = () => {
+alert("Button Clicked !!!")
+}
     return (
         <Card className="expense-item">
         <ExpenseDate date = {date}/>   
@@ -15,6 +17,7 @@ function ExpenseItem({date,title,amount})
         <div className="expense-item__price">${amount}</div>
     </div>
     </div>
+    <button onClick={clickhandler}>Change title</button>
         </Card>
     
     )
