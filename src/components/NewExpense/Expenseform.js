@@ -1,7 +1,14 @@
 import React from "react";
+import "./Expenseform.css"
 
-const ExpenseForm = ()=> {
+ const ExpenseForm = ()=> {
+
+    const TitleChange = () =>{
+    alert("button clicked")
+    }
     return(
+
+    
         <form>
             <div className="new-expense__controls">
             <div className="new-expense__control">
@@ -14,11 +21,15 @@ const ExpenseForm = ()=> {
                 </div>
                 <div className="new-expense__control">
                 <label>Date</label>
-                <input type="number" min="2020-01-01" step="2023-12-31" />
+                <input type="date" min="2020-01-01" step="2023-12-31" />
                 </div>
 
             </div>
-            <div className=""></div>
+            <div className="new-expense__actions ">
+            <button type="submit" onClick={TitleChange}>Add Expense</button>
+            </div>
         </form>
     )
 }
+
+export default ExpenseForm;
