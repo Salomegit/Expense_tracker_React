@@ -26,8 +26,14 @@ const ExpenseForm = () => {
             amountt:amount,
             datee:date
         }
-        console.log(expenseData)
-        console.log("form submitted")
+        console.log(expenseData);
+
+
+    // Reset the state variables using the setXXX functions
+    setTitle('');
+    setAmount('');
+    setDate('');
+
     }
     return (
 
