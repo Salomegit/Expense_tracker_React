@@ -27,12 +27,15 @@ function App() {
 
 
   ]
-
+function addedExpenseHandler (expenses){
+console.log("in app.js")
+console.log(expenses)
+}
   
   return (
     <div>
       <h2>Let's get started!</h2>
-      <NewExpense />
+      <NewExpense expenseHandler={addedExpenseHandler}/>
      <Expenses sally = {expense}/>
     </div>
   );

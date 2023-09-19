@@ -2,7 +2,7 @@ import React from "react";
 import "./Expenseform.css"
 import { useState } from "react";
 
-const ExpenseForm = () => {
+const ExpenseForm = ({onSaveExpenseData}) => {
     const [title, setTitle] = useState('')
     const [amount, setAmount] = useState('')
     const [date, setDate] = useState('')
@@ -26,9 +26,9 @@ const ExpenseForm = () => {
             amountt:amount,
             datee:date
         }
-        console.log(expenseData);
+        // console.log(expenseData);
 
-
+        onSaveExpenseData(expenseData);
     // Reset the state variables using the setXXX functions
     setTitle('');
     setAmount('');
