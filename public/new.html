@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Automation Example</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
+
+    <script>
+        // JavaScript code for task automation
+
+        // Simulate data
+        const data = {
+            name: "John Doe",
+            email: "johndoe@example.com"
+        };
+
+        // Function to fill out the form
+        function fillForm() {
+            document.getElementById("name").value = data.name;
+            document.getElementById("email").value = data.email;
+        }
+
+        // Function to submit the form
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+            fillForm(); // Fill out the form
+            document.getElementById("myForm").submit(); // Submit the form
+        }
+
+        // Attach the submitForm function to the form's submit event
+        document.getElementById("myForm").addEventListener("submit", submitForm);
+        console.log(data.name)
+    </script>
+</body>
+</html>
