@@ -8,27 +8,27 @@ export default function Expenses({ sally }) {
 
 
   const [filteredYear, SetFilteredYear] = useState("2020")
-  const [otherYears, setOtheryears] = useState("2019,2021,2023")
+  // const [otherYears, setOtheryears] = useState("2019,2021,2023")
 
-  const ChangeFilter = (selectedYear) => {
+  let otherYears = "2019,2021,2023";
 
-
-    SetFilteredYear(selectedYear)
-    if (selectedYear === "2020") {
-      setOtheryears("2019,2021,2023")
-    } else if (selectedYear === "2019") {
-      setOtheryears("2020,2021,2023")
+    if (filteredYear === "2020") {
+      otherYears = "2019,2021,2023";
+    } else if (filteredYear === "2019") {
+      otherYears = "2020,2021,2023";
 
     }
-    else if (selectedYear === "2021") {
-      setOtheryears("2020,2021,2023")
+    else if (filteredYear === "2021") {
+      otherYears = "2020,2021,2023"
 
-    } else if (selectedYear === "2023") {
-      setOtheryears("2020,2021,2023")
+    } else if (filteredYear === "2023") {
+      otherYears = "2020,2021,2023"
 
     }
-    setOtheryears(otherYears)
-  }
+
+const ChangeFilter = (selectedYear) => {
+SetFilteredYear(selectedYear)
+}
   return (
     <Card className="expenses">
 
