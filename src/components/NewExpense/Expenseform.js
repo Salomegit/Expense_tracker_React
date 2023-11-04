@@ -22,9 +22,9 @@ const ExpenseForm = ({onSaveExpenseData}) => {
     const submitHandler = (event ) => {
         event.preventDefault();
         const expenseData = {
-            titlee:title,
-            amountt:amount,
-            datee:date
+            title:title,
+            amount:amount,
+            date:new Date(date)
         }
         // console.log(expenseData);
 
