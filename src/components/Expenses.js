@@ -19,10 +19,10 @@ export default function Expenses({ sally }) {
 
     }
     else if (filteredYear === "2021") {
-      otherYears = "2020,2021,2023"
+      otherYears = "2020,2019,2023"
 
     } else if (filteredYear === "2023") {
-      otherYears = "2020,2021,2023"
+      otherYears = "2020,2021,2019"
 
     }
 
