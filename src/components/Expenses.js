@@ -23,6 +23,15 @@ export default function Expenses({ sally }) {
 	const ChangeFilter = (selectedYear) => {
 		SetFilteredYear(selectedYear)
 	}
+
+
+	const filteredExpense = sally.filter(expense => {
+		return expense.date.getFullYear().toString() === filteredYear
+
+	})
+	console.log(filteredYear, filteredExpense)
+
+	const noExpense = <p>No Expenses found</p>
 	return (
 		<Card className='expenses'>
 			<ExpensesFilter
@@ -30,15 +39,19 @@ export default function Expenses({ sally }) {
 				onChangeYearFilter={ChangeFilter}
 			/>
 			<p>hidden years are {otherYears}</p>
+			{filteredExpense.length === 0 ? (noExpense) : (
+			 <>
+			 {filteredExpense.map((expense) => (
+			   <ExpenseItem
+				 key={expense.id}
+				 title={expense.title}
+				 amount={expense.amount}
+				 date={expense.date}
+			   />
+			 ))}
+		   </>)
+			}
 
-			{sally.map((expense) => (
-				<ExpenseItem
-					key={expense.id}
-					title={expense.title}
-					amount={expense.amount}
-					date={expense.date}
-				/>
-			))}
 		</Card>
 	)
 }

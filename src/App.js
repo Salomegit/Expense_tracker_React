@@ -1,5 +1,5 @@
 import React from "react"
-import {HomePage, AboutPage} from "./pages"
+import {HomePage} from "./pages"
 
 function App() {
 	return (
