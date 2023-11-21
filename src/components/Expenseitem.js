@@ -16,6 +16,7 @@ function ExpenseItem({ date, title: initialTitle, amount }) {
     console.log(Person)
     console.log(Person["age"])
     return (
+       
         <Card className="expense-item">
             <ExpenseDate date={date} />
             <div className="expense-item__description">

@@ -3,36 +3,26 @@ import "./Expenseform.css"
 import { useState } from "react";
 
 const ExpenseForm = ({onSaveExpenseData}) => {
-    const [title, setTitle] = useState('')
-    const [amount, setAmount] = useState('')
-    const [date, setDate] = useState('')
+    const [expenseData, setExpenseData] = useState({ title: '', amount: '', date: '' })
 
-
-    const TitleChangeHandler = (event) => {
-        setTitle(event.target.value)
-
-    }
-    const AmountChangeHandler = (event) => {
-        setAmount(event.target.value)
-    }
-    const DateChangeHandler = (event) => {
-        setDate(event.target.value)
+    const handleExpenseData = (event) => {
+        const { name, value } = event.target;
+        setExpenseData((previousState) => {
+            return { ...previousState, [name]: value }
+        })
     }
 
     const submitHandler = (event ) => {
         event.preventDefault();
-        const expenseData = {
-            title:title,
-            amount:amount,
-            date:new Date(date)
+        const expenseFormData = {
+            title:expenseData.title,
+            amount:expenseData.amount,
+            date:new Date(expenseData.date)
         }
-        // console.log(expenseData);
 
-        onSaveExpenseData(expenseData);
-    // Reset the state variables using the setXXX functions
-    setTitle('');
-    setAmount('');
-    setDate('');
+        onSaveExpenseData(expenseFormData);
+        // Reset the state variables using the setXXX functions
+        setExpenseData({ title: '', amount: '', date: '' })
 
     }
     return (
@@ -42,16 +32,16 @@ const ExpenseForm = ({onSaveExpenseData}) => {
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    < input onChange={TitleChangeHandler} value={title} type="text" />
-                    <p>you have entered {title}</p>
+                    < input onChange={handleExpenseData} name="title" value={expenseData.title} type="text" />
+                    <p>you have entered {expenseData.title}</p>
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input value ={amount} onChange={AmountChangeHandler} type="number" min="0.01" step="0.01" />
+                    <input value ={expenseData.amount} onChange={handleExpenseData} name="amount" type="number" min="0.01" step="0.01" />
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" value={date} onChange={DateChangeHandler} min="2020-01-01" step="2023-12-31" />
+                    <input type="date" value={expenseData.date} onChange={handleExpenseData} name="date" min="2020-01-01" step="2023-12-31" />
                 </div>
 
             </div>
