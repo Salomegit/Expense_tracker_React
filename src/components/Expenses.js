@@ -1,8 +1,9 @@
 import "./Expenses.css"
+import ExpenseList from "./ExpenseList"
 import ExpensesFilter from "./ExpenseFilter"
 // import { useState } from "react";
 import React, { useState } from "react"
-import ExpenseItem from "./Expenseitem"
+
 import Card from "./Card"
 export default function Expenses({ sally }) {
 	const [filteredYear, SetFilteredYear] = useState("2020")
@@ -31,7 +32,6 @@ export default function Expenses({ sally }) {
 	})
 	console.log(filteredYear, filteredExpense)
 
-	const noExpense = <p>No Expenses found</p>
 	return (
 		<Card className='expenses'>
 			<ExpensesFilter
@@ -39,19 +39,8 @@ export default function Expenses({ sally }) {
 				onChangeYearFilter={ChangeFilter}
 			/>
 			<p>hidden years are {otherYears}</p>
-			{filteredExpense.length === 0 ? (noExpense) : (
-			 <>
-			 {filteredExpense.map((expense) => (
-			   <ExpenseItem
-				 key={expense.id}
-				 title={expense.title}
-				 amount={expense.amount}
-				 date={expense.date}
-			   />
-			 ))}
-		   </>)
-			}
-
+			
+<ExpenseList items = {filteredExpense}/>
 		</Card>
 	)
 }
