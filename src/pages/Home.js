@@ -3,14 +3,16 @@ import Expenses from "../components/Expenses"
 import NewExpense from "../components/NewExpense/NewExpense"
 
 const Home = () => {
-	const [expensess, setExpenses] = useState(dummy_expenses)
 
+	const [expensess, setExpenses] = useState(dummy_expenses)
+	
 	function addedExpenseHandler(expense) {
 		setExpenses((previousState) => {
 			return [...previousState, expense]
 		})
 	}
-
+	
+	// console.log ( "this is expenses" + expensess[0].title)
 	return (
 		<div>
 			<h2>Let's get started!</h2>
@@ -18,9 +20,12 @@ const Home = () => {
 			<Expenses sally={expensess} />
 		</div>
 	)
-}
+	
+
+} 
 
 export default Home
+
 
 const dummy_expenses = [
 	{

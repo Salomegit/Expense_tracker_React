@@ -12,9 +12,7 @@ function ExpenseItem({ date, title: initialTitle, amount }) {
         console.log(initialTitle);
 
     }
-    const Person = {name:"Salome",gender:"female"}
-    console.log(Person)
-    console.log(Person["age"])
+    
     return (
        
         <Card className="expense-item">

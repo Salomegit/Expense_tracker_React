@@ -40,7 +40,7 @@ export default function Expenses({ sally }) {
 			/>
 			<p>hidden years are {otherYears}</p>
 			
-<ExpenseList items = {filteredExpense}/>
+     <ExpenseList items = {filteredExpense}/>
 		</Card>
 	)
 }

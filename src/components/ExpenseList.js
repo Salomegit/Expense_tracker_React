@@ -1,25 +1,28 @@
 import React from 'react'
 import ExpenseItem from './Expenseitem'
 
-const ExpenseList = ({sally}) => {
+const ExpenseList = ({items}) => {
     const noExpense = <p>No Expenses found</p>
 
+    
     return (
         <div>
-            {sally.length === 0 ? (noExpense) : (
-                <>
-                    {sally.map((expense) => (
-                        <ExpenseItem
-                            key={expense.id}
-                            title={expense.title}
-                            amount={expense.amount}
-                            date={expense.date}
-                        />
-                    ))}
-                </>)
+            {console.log(items)}
+        {items === 0 ? (noExpense) : (
+        <>
+            {items.map((expense) => (
+                <ExpenseItem
+                    key={expense.id}
+                    title={expense.title}
+                    amount={expense.amount}
+                    date={expense.date}
+                />
+            ))
             }
+        </>
+    )}
+</div>
 
-        </div>
     )
 }
 
