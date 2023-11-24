@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const ExpenseForm = ({onSaveExpenseData}) => {
     const [expenseData, setExpenseData] = useState({ title: '', amount: '', date: '' })
+    const []
 
     const handleExpenseData = (event) => {
         const { name, value } = event.target;
@@ -46,8 +47,11 @@ const ExpenseForm = ({onSaveExpenseData}) => {
 
             </div>
             <div className="new-expense__actions ">
-                <button type="submit" >Add Expense</button>
+                <button type="submit" >Submit</button>
+                <button type="button" >Cancel</button>
+  
             </div>
+          
         </form>
     )
 }
