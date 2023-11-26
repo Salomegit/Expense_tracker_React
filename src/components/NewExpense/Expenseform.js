@@ -2,9 +2,9 @@ import React from "react";
 import "./Expenseform.css"
 import { useState } from "react";
 
-const ExpenseForm = ({onSaveExpenseData}) => {
+const ExpenseForm = ({onSaveExpenseData,onCancelFunction}) => {
     const [expenseData, setExpenseData] = useState({ title: '', amount: '', date: '' })
-    const []
+    
 
     const handleExpenseData = (event) => {
         const { name, value } = event.target;
@@ -48,7 +48,7 @@ const ExpenseForm = ({onSaveExpenseData}) => {
             </div>
             <div className="new-expense__actions ">
                 <button type="submit" >Submit</button>
-                <button type="button" >Cancel</button>
+                <button type="button" onClick={onCancelFunction}>Cancel</button>
   
             </div>
           
