@@ -1,4 +1,5 @@
 import React from 'react'
+import "./chart.bar.css"
 
 const ChartBar = (props) => {
 
