@@ -1,6 +1,6 @@
 import React from 'react'
 
-const chartBar = () => {
+const ChartBar = () => {
 
     let barFillHeight;
     if (props.max > 0) {
@@ -22,4 +22,4 @@ const chartBar = () => {
   )
 }
 
-export default chartBar
+export default ChartBar

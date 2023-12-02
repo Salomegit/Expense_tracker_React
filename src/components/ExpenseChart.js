@@ -1,5 +1,5 @@
 import React from 'react'
-import chart from './charts/chart'
+import Chart from './charts/chart'
 
 
 const ExpenseChart = ({items}) => {
@@ -29,7 +29,7 @@ const chartDataPoints = [
  
     return (
     <div>
-      <Chart />
+      <Chart dataPoints={chartDataPoints}/>
     </div>
   )
 }
