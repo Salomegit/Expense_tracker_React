@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ChartBar = () => {
+const ChartBar = (props) => {
 
     let barFillHeight;
-    if (props.max > 0) {
+    if (props.maxValue > 0) {
         barFillHeight = Math.round((props.value / props.maxValue) * 100) + '%'
     }
 
@@ -15,7 +15,7 @@ const ChartBar = () => {
       </div>    
       <div className='chart-bar__label'>
 
-     {prop.label}
+     {props.label}
      
       </div>
     </div>

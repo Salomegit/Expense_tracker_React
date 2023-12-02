@@ -1,6 +1,8 @@
 import "./Expenses.css"
 import ExpenseList from "./ExpenseList"
 import ExpensesFilter from "./ExpenseFilter"
+import ExpenseChart from "./ExpenseChart"
+
 // import { useState } from "react";
 import React, { useState } from "react"
 
@@ -38,6 +40,7 @@ export default function Expenses({ sally }) {
 				selected={filteredYear}
 				onChangeYearFilter={ChangeFilter}
 			/>
+			<ExpenseChart items={filteredExpense}/>
 			<p>hidden years are {otherYears}</p>
 			
      <ExpenseList items = {filteredExpense}/>
