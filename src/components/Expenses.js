@@ -40,7 +40,7 @@ export default function Expenses({ sally }) {
 				selected={filteredYear}
 				onChangeYearFilter={ChangeFilter}
 			/>
-			<ExpenseChart items={filteredExpense}/>
+			<ExpenseChart expenses={filteredExpense}/>
 			<p>hidden years are {otherYears}</p>
 			
      <ExpenseList items = {filteredExpense}/>
